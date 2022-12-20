@@ -4,7 +4,7 @@ import styles from './drawerChild.module.css';
 
 function DrawerChild({ item }) {
 
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState)
     }
