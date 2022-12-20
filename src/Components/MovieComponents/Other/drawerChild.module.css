@@ -1,0 +1,76 @@
+.header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    user-select: none;
+}
+
+.header:hover {
+    filter: brightness(130%)
+}
+
+.number {
+    margin-right: .5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(0deg, #08C776, #369bc7);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wrapper {
+    display: flex;
+    margin-left: 2em;
+    padding-right: 2em;
+    text-decoration: none;
+}
+
+.wrapper:hover {
+    background-color: rgb(30, 30, 30);
+}
+
+.FolderName {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(0deg, #08C776, #2A7EA2);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.folderChildren {
+    display: flex;
+    flex-direction: column;
+}
+
+.folderChild {
+    color: whitesmoke;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* -----------------------Header Icon----------------------- */
+.arrow {
+    border: solid white;
+    border-width: 0 .15em .15em 0;
+    display: inline-block;
+    padding: .15em;
+    margin-right: 1em;
+    margin-left: 1.75em;
+    transition: all .1s;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

@@ -1,0 +1,126 @@
+.drawerContainer {
+    background-color: rgb(18, 18, 18);
+    height: 100%;
+}
+
+.drawerHeader {
+    padding-top: .36em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    display: flex;
+}
+
+.drawerHeaderText {
+    background: -webkit-linear-gradient(0deg, #08C776, #2A7EA2);
+    width: 5em;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.listColumn {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+.addNew {
+    cursor: pointer;
+    background-color: rgb(24, 24, 24);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    background: -webkit-linear-gradient(0deg, #08C776, #2A7EA2);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.addNew:hover {
+    filter: brightness(120%)
+}
+
+.add {
+    font-size: 2em;
+    margin-right: .3em;
+    margin-left: .65em;
+    margin-top: -.2em;
+}
+
+.new {
+    font-size: 1.2em;
+}
+
+/* -----------------------Header Icon----------------------- */
+.close {
+    position: absolute;
+    z-index: 99;
+    top: 1em;
+    left: 0;
+    cursor: pointer;
+}
+
+.close2 {
+    position: absolute;
+    z-index: 99;
+    top: .8em;
+    left: 0;
+    cursor: pointer;
+}
+
+.openedBtn {
+    left: 12em;
+}
+
+.closedBtn {
+    left: 1em;
+}
+
+.barsContainer {
+    display: inline-block;
+    transition: all .5s;
+}
+
+.change:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    background-color: white;
+    width: 1.5em;
+    height: .2em;
+    margin: .3em;
+    transition: all .5s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-.33em, .33em);
+    transform: rotate(-45deg) translate(-.33em, .33em);
+    width: 1.7em;
+    height: .2em;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-.33em, -.33em);
+    transform: rotate(45deg) translate(-.33em, -.33em);
+    width: 1.7em;
+    height: .2em;
+}
