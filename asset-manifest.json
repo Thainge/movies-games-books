@@ -1,19 +1,24 @@
 {
   "files": {
-    "main.css": "/movies-games-books/static/css/main.8e132222.css",
-    "main.js": "/movies-games-books/static/js/main.58fa90da.js",
-    "static/media/last.png": "/movies-games-books/static/media/last.e399862e1cfab7e73e3d.png",
-    "static/media/first.png": "/movies-games-books/static/media/first.257e717ef219b2ce8b4d.png",
-    "static/media/back.png": "/movies-games-books/static/media/back.50c37e4b1c1dc1b0693d.png",
-    "static/media/loading.gif": "/movies-games-books/static/media/loading.1952935ed80fba5926fe.gif",
-    "static/media/reload.png": "/movies-games-books/static/media/reload.9f9fc1062adf6646d78a.png",
+    "main.css": "/movies-games-books/static/css/main.705e542d.css",
+    "main.js": "/movies-games-books/static/js/main.6875bec3.js",
+    "static/media/books.png": "/movies-games-books/static/media/books.302587ea59e3236c9792.png",
+    "static/media/movies.png": "/movies-games-books/static/media/movies.a4269eb2553334f73e44.png",
+    "static/media/games.png": "/movies-games-books/static/media/games.cdfbfc305f854af76dba.png",
+    "static/media/books2.png": "/movies-games-books/static/media/books2.e405c31a3917d9990612.png",
+    "static/media/games2.png": "/movies-games-books/static/media/games2.211ad4bdacfbf3118534.png",
+    "static/media/gamesbackground.png": "/movies-games-books/static/media/gamesbackground.e0af92c233a5d4d74491.png",
+    "static/media/movies2.png": "/movies-games-books/static/media/movies2.a245577e84864732c44f.png",
+    "static/media/logo4.png": "/movies-games-books/static/media/logo4.d93ad1a1bd789cb186db.png",
+    "static/media/logo3.png": "/movies-games-books/static/media/logo3.a26695b4bb203ccec950.png",
+    "static/media/logo1.png": "/movies-games-books/static/media/logo1.d05e00119ef70fff102f.png",
     "static/media/upload.png": "/movies-games-books/static/media/upload.d63a7ba3d87e93aa4e99.png",
     "index.html": "/movies-games-books/index.html",
-    "main.8e132222.css.map": "/movies-games-books/static/css/main.8e132222.css.map",
-    "main.58fa90da.js.map": "/movies-games-books/static/js/main.58fa90da.js.map"
+    "main.705e542d.css.map": "/movies-games-books/static/css/main.705e542d.css.map",
+    "main.6875bec3.js.map": "/movies-games-books/static/js/main.6875bec3.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e132222.css",
-    "static/js/main.58fa90da.js"
+    "static/css/main.705e542d.css",
+    "static/js/main.6875bec3.js"
   ]
 }
