@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/movies-games-books/static/css/main.f9f12983.css",
-    "main.js": "/movies-games-books/static/js/main.4ee33b35.js",
+    "main.js": "/movies-games-books/static/js/main.c38f4452.js",
     "static/media/books.png": "/movies-games-books/static/media/books.302587ea59e3236c9792.png",
     "static/media/movies.png": "/movies-games-books/static/media/movies.a4269eb2553334f73e44.png",
     "static/media/games.png": "/movies-games-books/static/media/games.cdfbfc305f854af76dba.png",
@@ -15,10 +15,10 @@
     "static/media/upload.png": "/movies-games-books/static/media/upload.d63a7ba3d87e93aa4e99.png",
     "index.html": "/movies-games-books/index.html",
     "main.f9f12983.css.map": "/movies-games-books/static/css/main.f9f12983.css.map",
-    "main.4ee33b35.js.map": "/movies-games-books/static/js/main.4ee33b35.js.map"
+    "main.c38f4452.js.map": "/movies-games-books/static/js/main.c38f4452.js.map"
   },
   "entrypoints": [
     "static/css/main.f9f12983.css",
-    "static/js/main.4ee33b35.js"
+    "static/js/main.c38f4452.js"
   ]
 }
