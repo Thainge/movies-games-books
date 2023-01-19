@@ -14,7 +14,7 @@ const customStyles = {
     },
 };
 
-function MainDrawer({ allFolders, AddModal, DrawerChild }) {
+function MainDrawer({ allFolders, AddModal, DrawerChild, title }) {
 
     const [isOpen, setIsOpen] = useState(false)
     const toggleDrawer = () => {
@@ -24,6 +24,13 @@ function MainDrawer({ allFolders, AddModal, DrawerChild }) {
     const [addModalState, setAddModalState] = useState(false);
     const openModal = () => {
         setAddModalState(true);
+    }
+
+    const [searchText, setSearchText] = useState('');
+
+    const searchUpdate = (e) => {
+        let searchVal = e.target.value;
+        setSearchText(searchVal);
     }
 
     return (
@@ -42,7 +49,7 @@ function MainDrawer({ allFolders, AddModal, DrawerChild }) {
             >
                 <div className={styles.drawerContainer}>
                     <div className={styles.drawerHeader}>
-                        <div className={styles.drawerHeaderText}>Movies</div>
+                        <div className={styles.drawerHeaderText}>title</div>
                         <div className={`${styles.close2} ${styles.openedBtn}`} onClick={toggleDrawer}>
                             <div className={`${styles.barsContainer} ${styles.change}`}>
                                 <div className={styles.bar1}></div>
@@ -51,10 +58,11 @@ function MainDrawer({ allFolders, AddModal, DrawerChild }) {
                             </div>
                         </div>
                     </div>
+                    <input type={'search'} className={styles.search} onChange={searchUpdate} placeholder={'search...'} />
                     <div className={styles.listColumn}>
                         {
                             allFolders.map((item, index) => (
-                                <DrawerChild key={index} item={item} />
+                                <DrawerChild searchText={searchText} key={index} item={item} />
                             ))
                         }
                         <div className={styles.addNew} onClick={openModal}>
