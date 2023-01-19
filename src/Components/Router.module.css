@@ -1,6 +1,21 @@
 .drawerContainer {
-    background-color: rgb(18, 18, 18);
+    background-color: var(--baseBackground4);
     height: 100%;
+    user-select: none;
+}
+
+.Modal {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.Modal:active,
+.Modal:focus {
+    outline: none;
+    border: 2px solid black;
 }
 
 .search {
@@ -9,7 +24,7 @@
     padding-bottom: .8em;
     padding-left: 2em;
     margin-bottom: .8em;
-    background-color: rgb(0, 0, 0);
+    background: var(--searchBackground);
     border: none;
     font-size: 1.1em;
     color: whitesmoke;
@@ -17,21 +32,22 @@
 
 .search:focus,
 .search:active {
-    background-color: black;
+    background: var(--searchBackgroundActive);
     border: 0px solid grey;
     outline: none;
 }
 
 .drawerHeader {
-    padding-top: .47em;
+    padding-top: 1em;
     padding-left: 1em;
     padding-bottom: 1em;
     display: flex;
+    width: 100%;
 }
 
 .drawerHeaderText {
-    background: -webkit-linear-gradient(0deg, #08C776, #2A7EA2);
-    width: 5em;
+    background: var(--gradientText);
+    width: 100%;
     text-transform: uppercase;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -40,12 +56,25 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: .1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .listColumn {
     display: flex;
     flex-direction: column;
-    row-gap: .5em;
+    overflow-y: auto;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 999999;
 }
 
 .addNew {
@@ -57,14 +86,23 @@
     align-items: center;
     padding-top: .4em;
     padding-bottom: .4em;
-    background: -webkit-linear-gradient(0deg, #08C776, #2A7EA2);
+    background: var(--gradientText);
     text-transform: uppercase;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .addNew:hover {
-    filter: brightness(120%)
+    filter: brightness(120%);
+}
+
+.addBackground {
+    margin-top: 2em;
+    background: var(--drawerRowBackground);
+}
+
+.addBackground:hover {
+    background: var(--drawerRowBackgroundHover);
 }
 
 .add {
@@ -80,23 +118,25 @@
 
 /* -----------------------Header Icon----------------------- */
 .close {
-    position: absolute;
+    position: fixed;
     z-index: 99;
-    top: 1em;
+    top: 1.1em;
     left: 0;
     cursor: pointer;
+    transition: .1s;
+}
+
+.close:hover {
+    scale: 1.02
 }
 
 .close2 {
-    position: absolute;
-    z-index: 99;
-    top: .8em;
-    left: 0;
     cursor: pointer;
-}
-
-.openedBtn {
-    left: 12em;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: .15em;
+    margin-right: 1.6em;
 }
 
 .closedBtn {
@@ -142,4 +182,22 @@
     transform: rotate(45deg) translate(-.33em, -.33em);
     width: 1.7em;
     height: .2em;
+}
+
+@media screen and (max-width: 648px) {
+    .Modal {
+        width: 100%;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .close {
+        top: 0;
+        height: 9vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

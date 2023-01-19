@@ -1,0 +1,200 @@
+.MoviesPapa {
+    background-color: var(--baseBackground4);
+    min-height: 60vh;
+    padding: 2em;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 999999;
+}
+
+.MoviesContainer {
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, max-content));
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    column-gap: 1em;
+    row-gap: .5em;
+}
+
+.drawerOpen {
+    margin-left: 16em;
+    margin-right: .7em;
+    transition: .3s
+}
+
+.normal {
+    margin-left: 10em;
+    margin-right: 10em;
+    transition: .3s
+}
+
+.fullWidth {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fileText:hover {
+    scale: 1.03;
+}
+
+.containerInput>.disabledInput {
+    display: none;
+}
+
+.header {
+    margin-top: 2em;
+    color: rgb(232, 230, 227);
+    text-align: center;
+}
+
+.reload {
+    height: 3em;
+    width: auto;
+    margin-right: .1em;
+}
+
+.fileText {
+    color: rgb(232, 230, 227);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.searchInput {
+    background-color: var(--searchBackground);
+    color: rgb(232, 230, 227);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 20em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: none;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    outline: none;
+}
+
+.searchInput:focus {
+    background-color: var(--searchBackgroundActive);
+}
+
+.imageLoading {
+    width: 3em;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.buttonBox {
+    height: 2em;
+    margin-bottom: 1.5em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.button {
+    cursor: pointer;
+    width: 2em;
+    transition: .1s;
+}
+
+.button:hover {
+    width: 2.1em;
+}
+
+@media screen and (max-width: 912px) {
+    .searchInput {
+        width: 20vw;
+    }
+}
+
+@media screen and (max-width: 778px) {
+    .buttonBox {
+        height: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    .button {
+        width: 1.5em;
+    }
+
+    .searchInput {
+        width: 20vw;
+    }
+
+    .MoviesContainer {
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+
+    .drawerOpen {
+        margin-left: 16em;
+    }
+
+    .normal {
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+}
+
+@media screen and (max-width: 612px) {
+    .searchInput {
+        width: 20em;
+        border-radius: 1em;
+        margin: 1em;
+        margin-bottom: 2em;
+    }
+
+    .containerInput {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .searchInput {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .MoviesContainer {
+        background-color: transparent;
+    }
+
+    .fileText {
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 448px) {
+    .MoviesContainer {
+        margin: 0;
+    }
+}

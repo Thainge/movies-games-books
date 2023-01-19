@@ -1,0 +1,64 @@
+.resultItem {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: .5em;
+}
+
+.resultItem:hover {
+    background-color: var(--baseBackground2);
+}
+
+.text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemText {
+    width: 70%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-break: none;
+    font-size: 1.1em;
+}
+
+.delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: .3em;
+    margin-right: .5em;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-style: normal;
+    transition: .1s;
+    padding-right: .2em;
+}
+
+.delete:hover {
+    scale: 1.2
+}
+
+.number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .1s;
+    background: var(--baseBackground2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-break: none;
+    font-size: .8em;
+    height: 3em;
+    padding-left: .7em;
+    padding-right: .7em;
+}

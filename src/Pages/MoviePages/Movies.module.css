@@ -1,25 +1,50 @@
+.MoviesPapa {
+    background-color: rgb(11, 12, 13);
+    min-height: 60vh;
+    padding: 2em;
+}
+
 .MoviesContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20em, max-content));
-    column-gap: 1em;
-    row-gap: 1em;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding-right: 2em;
-    padding-left: 2em;
-    margin-right: 10em;
-    margin-left: 10em;
     justify-content: center;
     background-color: rgb(11, 12, 13);
-    padding-bottom: 3em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16em, max-content));
+    column-gap: 2em;
+    row-gap: 2em;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    column-gap: 1em;
+    row-gap: .5em;
+}
+
+.drawerOpen {
+    margin-left: 16em;
+    margin-right: .7em;
+    transition: .3s
+}
+
+.normal {
+    margin-left: 10em;
+    margin-right: 10em;
+    transition: .3s
+}
+
+.fullWidth {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .containerInput {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 10em;
-    margin-left: 10em;
+    width: 100%;
 }
 
 .fileText:hover {
@@ -39,6 +64,7 @@
 .reload {
     height: 3em;
     width: auto;
+    margin-right: .2em;
 }
 
 .fileText {
@@ -47,10 +73,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: .1s;
 }
 
+
 .searchInput {
-    background-color: rgb(26, 26, 26);
+    background: var(--searchBackground);
     color: rgb(232, 230, 227);
     padding-top: 1em;
     padding-bottom: 1em;
@@ -63,13 +91,10 @@
     border-top-right-radius: 1em;
 }
 
-.searchInput:hover {
-    background-color: rgb(24, 24, 24);
-}
-
 .searchInput:active,
 .searchInput:focus {
     outline: none;
+    background: var(--searchBackgroundActive);
 }
 
 .imageLoading {
@@ -79,6 +104,25 @@
     justify-self: center;
 }
 
+.buttonBox {
+    height: 2em;
+    margin-bottom: 1.5em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.button {
+    cursor: pointer;
+    width: 2em;
+    transition: .1s;
+}
+
+.button:hover {
+    width: 2.1em;
+}
+
 @media screen and (max-width: 912px) {
     .searchInput {
         width: 20vw;
@@ -86,20 +130,31 @@
 }
 
 @media screen and (max-width: 778px) {
-    .searchInput {
-        width: 20vw;
+    .buttonBox {
+        height: 2vw;
+        margin-bottom: 2vw;
     }
 
-    .containerInput {
-        margin-right: 5em;
-        margin-left: 5em;
+    .button {
+        width: 1.5em;
+    }
+
+    .searchInput {
+        width: 20vw;
     }
 
     .MoviesContainer {
         padding-right: 2em;
         padding-left: 2em;
-        margin-right: 5em;
+    }
+
+    .drawerOpen {
+        margin-left: 16em;
+    }
+
+    .normal {
         margin-left: 5em;
+        margin-right: 5em;
     }
 }
 

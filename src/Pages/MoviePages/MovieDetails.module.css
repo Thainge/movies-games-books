@@ -54,7 +54,7 @@
 }
 
 .loadingContainer {
-    background-image: linear-gradient(to right, rgb(11, 12, 13) 5%, rgba(20, 20, 20, .7));
+    background-image: var(--gradientBackground);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +68,7 @@
     justify-content: flex-start;
     align-items: center;
     height: 100%;
-    background-image: linear-gradient(to right, rgb(11, 12, 13) 5%, rgba(20, 20, 20, .7));
+    background-image: var(--gradientBackground);
 }
 
 .backArrow {
@@ -113,12 +113,13 @@
 
 .container {
     height: 35em;
+    transition: .3s;
 }
 
 .childContainer {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to right, rgb(11, 12, 13) 5%, rgba(20, 20, 20, .7));
+    background-image: var(--gradientBackground);
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -132,6 +133,19 @@
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
+    transition: .3s;
+}
+
+.drawerOpen {
+    flex-direction: column-reverse;
+    text-align: center;
+    transition: .3s;
+}
+
+.normal {
+    flex-direction: row-reverse;
+    text-align: left;
+    transition: .3s;
 }
 
 .header {

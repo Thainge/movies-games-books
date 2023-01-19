@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './drawerChild.module.css';
 
-function DrawerChild({ item, searchText }) {
+function MovieDrawerChild({ item, searchText }) {
+    const navigate = useNavigate();
 
     const [isOpen, setIsOpen] = useState(false);
-    const toggleDrawer = () => {
-        setIsOpen((prevState) => !prevState)
-    }
+    // const toggleDrawer = () => {
+    //     setIsOpen((prevState) => !prevState)
+    // }
 
     const [shownItems, setShownItems] = useState(item.FinishedData);
 
@@ -28,10 +29,21 @@ function DrawerChild({ item, searchText }) {
         }
     }, [searchText]);
 
+    const setCurrentFolder = () => {
+        // let navString = `/movies/${item.id}/${item.folderName}`;
+        // navigate(navString);
+    }
+
     return (
         <div className={styles.container}>
-            <div className={styles.header} onClick={toggleDrawer}>
-                <div className={`${styles.arrow} ${isOpen ? styles.down : styles.right}`}></div>
+            <div className={`${styles.header} ${isOpen ? styles.headerActive : styles.nothing}`} onClick={setCurrentFolder}>
+                <div className={styles.arrowContainer} onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleDrawer();
+                }}>
+                    <div className={`${styles.arrow} ${isOpen ? styles.down : styles.right}`}></div>
+                </div>
                 <div className={styles.FolderName}>{item.folderName}</div>
             </div>
 
@@ -40,7 +52,7 @@ function DrawerChild({ item, searchText }) {
                     {
                         shownItems.map((data, index) => (
                             <Link key={index} to={`/movies/${item.id}/${item.folderName}/${data.id}`} className={styles.wrapper}>
-                                <div className={styles.number}>#</div>
+                                <div className={styles.number}></div>
                                 <div className={styles.folderChild}>{data.title}</div>
                             </Link>
                         ))
@@ -51,4 +63,4 @@ function DrawerChild({ item, searchText }) {
     )
 }
 
-export default DrawerChild;
+export default MovieDrawerChild;

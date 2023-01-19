@@ -1,10 +1,80 @@
-html {
-    background-color: rgb(24, 24, 24);
-}
-
 body {
-    background-color: black;
+    margin: 0;
+    background-color: var(--baseBackground3);
     padding-bottom: 3em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(232, 230, 227);
+}
+
+:root {
+    --searchBackground: rgb(34, 34, 34);
+    --searchBackgroundActive: rgb(40, 40, 40);
+    --drawerRowBackground: -webkit-linear-gradient(right, #08c77700, #2a7ea22d 70%);
+    --drawerRowBackgroundHover: -webkit-linear-gradient(right, #08c77748, #2a7ea257 70%);
+    --body: rgb(34, 34, 34);
+    --border: solid grey;
+    --baseBackground1: rgb(20, 20, 20);
+    --baseBackground2: rgb(34, 34, 34);
+    --baseBackground3: rgb(24, 24, 24);
+    --baseBackground4: rgb(16, 16, 16);
+    --headerBackground: rgb(32, 32, 32);
+    --background1: rgb(11, 12, 13);
+    --linkBackground: rgb(39, 39, 39);
+    --linkBackgroundHover: rgb(49, 49, 49);
+    --linkBackgroundActive: rgb(49, 49, 49);
+    --gradientText: -webkit-linear-gradient(0deg, #08C776, #2A7EA2);
+    --gradientBackground: linear-gradient(to right, rgb(11, 12, 13) 5%, rgba(20, 20, 20, .7));
+    --gradientButton: linear-gradient(to right, rgb(0, 216, 108), rgb(42, 125, 163));
+    --gradientButtonDisabled: linear-gradient(to right, rgb(0, 114, 57), rgb(22, 64, 83));
+    --gradientButtonHover: linear-gradient(to right, rgb(0, 161, 81), rgb(34, 100, 131));
+    --gradientButtonActive: linear-gradient(to right, rgb(0, 150, 75), rgb(29, 86, 112));
+}
+
+html[data-theme='games'] {
+    --searchBackground: #131314;
+    --searchBackgroundActive: #212225;
+    --drawerRowBackground: -webkit-linear-gradient(right, #3636360c, #474747);
+    --drawerRowBackgroundHover: -webkit-linear-gradient(right, #30303000, #5a5d63 70%);
+    --body: #1B2838;
+    --border: solid grey;
+    --drawerHover: #5b5d61;
+    --baseBackground1: #2c2b2b;
+    --baseBackground2: #3a3a3b;
+    --baseBackground3: #37383a;
+    --baseBackground4: #2f2f30;
+    --headerBackground: #1f1f1f;
+    --background1: #212226;
+    --linkBackground: #303033;
+    --linkBackgroundHover: #404144;
+    --linkBackgroundActive: #404144;
+    --gradientText: -webkit-linear-gradient(0deg, #cfcfcf, #afaeae);
+    --gradientBackground: linear-gradient(to right, rgb(11, 12, 13) 5%, rgba(20, 20, 20, .7));
+    --gradientButton: -webkit-linear-gradient(right, #36363667, #222222);
+    --gradientButtonDisabled: -webkit-linear-gradient(right, #3636366b, #2b2b2b);
+    --gradientButtonHover: -webkit-linear-gradient(right, #3636365d, #1d1d1d);
+    --gradientButtonActive: -webkit-linear-gradient(right, #36363675, #202020);
+}
+
+html[data-theme='books'] {
+    --searchBackground: #202f42;
+    --searchBackgroundActive: #24354b;
+    --drawerRowBackground: -webkit-linear-gradient(right, #0d1b2d00, #147cac31 70%);
+    --drawerRowBackgroundHover: -webkit-linear-gradient(right, #0d1b2d50, #147cac5e 70%);
+    --body: #1B2838;
+    --border: solid grey;
+    --baseBackground1: #141d29;
+    --baseBackground2: #1B2838;
+    --baseBackground3: #16202b;
+    --baseBackground4: #101c29;
+    --headerBackground: #101c29;
+    --background1: rgb(25, 38, 51);
+    --linkBackground: #101822;
+    --linkBackgroundHover: #1d2a38;
+    --linkBackgroundActive: #152130;
+    --gradientText: -webkit-linear-gradient(0deg, #b9b9b9, #f7f7f7);
+    --gradientBackground: linear-gradient(to right, rgb(11, 12, 13) 5%, rgba(20, 20, 20, .7));
+    --gradientButton: -webkit-linear-gradient(0deg, #0D1B2D, #147CAC);
+    --gradientButtonDisabled: -webkit-linear-gradient(0deg, #0d1b2d7a, #147cac77);
+    --gradientButtonHover: -webkit-linear-gradient(0deg, #0D1B2D, rgb(16, 103, 143));
+    --gradientButtonActive: -webkit-linear-gradient(0deg, #0D1B2D, #0c5374);
 }

@@ -1,0 +1,79 @@
+.headerContainer {
+    border-bottom: .1em solid rgb(232, 230, 227);
+    padding-bottom: 2em;
+}
+
+.h1El {
+    color: rgb(232, 230, 227);
+    margin-top: 1em;
+}
+
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--baseBackground3);
+
+}
+
+.liEl .link {
+    display: block;
+    color: rgb(232, 230, 227);
+    text-align: center;
+    padding: 1.4em 4em;
+    text-decoration: none;
+    letter-spacing: .2em;
+    background-color: var(--linkBackground);
+}
+
+.activeLink {
+    display: block;
+    color: rgb(232, 230, 227);
+    text-align: center;
+    padding: 1.4em 4em;
+    text-decoration: none;
+    letter-spacing: .2em;
+    background-color: var(--linkBackgroundActive);
+}
+
+.activeLink:hover {
+    color: white;
+}
+
+/* Change the link color to #111 (black) on hover */
+.liEl .link:hover {
+    background-color: var(--linkBackgroundHover);
+    color: white;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.special {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--gradientText);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: .05em;
+    font-size: 1.2em;
+    margin-left: .3em;
+}
+
+.centerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

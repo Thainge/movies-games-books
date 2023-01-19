@@ -13,6 +13,10 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        margin: '0',
+        padding: '0',
+        border: 'none',
+        background: 'none',
     },
 };
 
@@ -57,24 +61,25 @@ function HomeCollection({ item, index }) {
     return (
         <>
             <Modal
-                className='Modal'
                 isOpen={deleteIsOpen}
                 onRequestClose={() => setDeleteIsOpen(false)}
                 style={customStyles}
-                overlayClassName="Overlay"
-                contentLabel="Example Modal"
+                overlayClassName={styles.overlay}
             >
                 <DeleteModal item={item} setDeleteIsOpen={setDeleteIsOpen} index={index} />
             </Modal>
             <Fade duration={300}>
-                <Link to={`${item.id}/${item.folderName}`} className={styles.linkStyles}>
+                <Link to={`/movies/${item.id}/${item.folderName}`} className={styles.linkStyles}>
                     <div className={styles.posterContainer} onMouseOut={() => setHovering(false)} onMouseOver={() => setHovering(true)}>
                         {
                             chosenImage ? <img className={styles.posterImg} style={{ backgroundImage: 'url(' + `${chosenImage}` + ')' }} /> : <></>
                         }
                         {
                             hovering ? <Fade duration={300}>
-                                <img onMouseDownCapture={(e) => setDeleteIsOpen(true)} src={require('../../../assets/delete.png')} className={styles.delete} />
+                                <img onClick={(e) => {
+                                    e.preventDefault();
+                                    setDeleteIsOpen(true);
+                                }} src={require('../../../assets/delete.png')} className={styles.delete} />
                             </Fade> : <></>
                         }
                         <div className={styles.linker}>

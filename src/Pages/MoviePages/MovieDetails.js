@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 import { ContextFunction } from '../../Contexts/ContextProvider';
 import { useNavigate, useParams } from 'react-router-dom';
 
-function MovieDetails() {
+function MovieDetails({ drawerIsOpen }) {
     const obj = ContextFunction();
     const { allFolders } = obj;
 
@@ -110,7 +110,7 @@ function MovieDetails() {
                         ? <div className={styles.loadingContainer}><img src={require('../../assets/loading.gif')} className={styles.imageLoading}></img></div>
                         : <div className={styles.container}>
                             <div className={styles.childContainer}>
-                                <div className={styles.flexContainer}>
+                                <div className={`${styles.flexContainer} ${drawerIsOpen ? styles.drawerOpen : styles.normal}`}>
                                     <Fade>
                                         <div className={styles.textContainer}>
                                             <h1 className={styles.header}>{name} ({year})</h1>

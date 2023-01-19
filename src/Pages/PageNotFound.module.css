@@ -2,8 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-right: auto;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 .5em .3em black;
+    border-radius: 1em;
+    width: 28em;
+    z-index: 999;
+    transition: all .2s;
+}
 
+.drawerOpen {
+    margin-left: 8em;
 }
 
 .text {
@@ -12,14 +24,20 @@
     align-items: flex-start;
     flex-direction: column;
     max-width: 25em;
-    background-color: rgb(11, 12, 13);
+    background-color: var(--baseBackground1);
     border-radius: 1em;
     padding: 2em;
 }
 
 .textChild {
-    background-color: rgb(24, 24, 24);
+    background-color: var(--baseBackground3);
     border-radius: 1em;
     padding-right: 2em;
     padding-left: 2em;
+}
+
+@media screen and (max-width: 720px) {
+    .drawerOpen {
+        margin: 0;
+    }
 }

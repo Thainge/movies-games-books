@@ -15,10 +15,17 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        padding: '0',
+        margin: '0',
+        background: 'none',
+        outline: 'none',
+        border: 'none',
+        overflow: 'hidden',
+        textAlign: 'center',
     },
 };
 
-function Home() {
+function Home({ drawerIsOpen }) {
     const obj = ContextFunction();
     const { allFolders, setAllFolders } = obj;
 
@@ -29,25 +36,24 @@ function Home() {
     }
 
     return (
-        <div className={styles.Container}>
-            <h1 className={styles.header}>Home</h1>
+        <div className={`${styles.Container} ${drawerIsOpen ? styles.drawerOpen : styles.nothing}`}>
+            <h1 className={styles.header}>Movie Collections</h1>
             <div className={styles.MoviesContainer}>
+                <div className={styles.add} onClick={openModal}>
+                    <div className={styles.addIcon}>+</div>
+                    <div className={styles.addText}>New Collection</div>
+                </div>
                 {
                     allFolders.map((item, index) =>
                         <HomeCollection key={index} item={item} index={index} />
                     )
                 }
-                <div className={styles.add} onClick={openModal}>
-                    <div className={styles.addIcon}>+</div>
-                    <div className={styles.addText}>New Collection</div>
-                </div>
             </div>
             <Modal
-                className="Modal"
                 isOpen={addModalState}
                 onRequestClose={() => setAddModalState(false)}
                 style={customStyles}
-                overlayClassName="Overlay"
+                overlayClassName={styles.overlay}
                 contentLabel="Example Modal"
             >
                 {

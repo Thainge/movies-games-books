@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: rgb(216, 216, 216);
+    user-select: none;
+    background: var(--drawerRowBackground);
+    transition: .1s;
+    margin-bottom: .5em;
+    padding-bottom: .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-break: none;
+}
+
+.header:hover {
+    background: var(--drawerRowBackgroundHover);
+}
+
+.headerActive {
+    background: var(--drawerRowBackgroundHover);
+}
+
+.number {
+    margin-right: .5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--gradientText);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wrapper {
+    display: flex;
+    margin-left: 2em;
+    padding-right: 2em;
+    text-decoration: none;
+}
+
+.wrapper:hover {
+    background-color: rgb(30, 30, 30);
+}
+
+.FolderName {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--gradientText);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-break: none;
+}
+
+.folderChildren {
+    display: flex;
+    flex-direction: column;
+}
+
+.folderChild {
+    color: whitesmoke;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* -----------------------Header Icon----------------------- */
+.arrowContainer {
+    width: .2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: .6em;
+    padding-left: .8em;
+    padding-right: .8em;
+    margin-right: .5em;
+    margin-left: 1em;
+}
+
+.arrowContainer:hover {
+    --border: solid white;
+}
+
+.arrow {
+    border: var(--border);
+    border-width: 0 .15em .15em 0;
+    padding: .15em;
+    margin-left: 1.75em;
+    transition: all .1s;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

@@ -7,9 +7,12 @@ import { useParams } from 'react-router-dom';
 import ls from 'local-storage';
 import fetchRequest from '../../hooks/addNewMovies';
 
-function Movies() {
+const gridImage = require('../../assets/grid.png');
+const rowImage = require('../../assets/row.png');
+
+function Movies({ drawerIsOpen }) {
     const obj = ContextFunction();
-    const { allFolders } = obj;
+    const { allFolders, isGrid, setIsGrid } = obj;
     const [loading, setLoading] = useState(false);
     let { movieFolder, id } = useParams();
 
@@ -64,8 +67,41 @@ function Movies() {
         setLoading((prev) => false)
     }
 
+    function getWindowDimensions() {
+        const width = window.innerWidth
+        const height = window.innerHeight
+        return {
+            width,
+            height
+        };
+    }
+
+    const [MediaBelow, setMediaBelow] = useState(false);
+
+    const updateScreenWidth = () => {
+        const width = window.innerWidth;
+        if (width > 778) {
+            setMediaBelow(() => false);
+        }
+        if (width < 778) {
+            setMediaBelow(() => true);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', updateScreenWidth);
+        const width = window.innerWidth;
+        if (width > 778) {
+            setMediaBelow(() => false);
+        }
+        if (width < 778) {
+            setMediaBelow(() => true);
+        }
+        return () => window.removeEventListener('resize', updateScreenWidth);
+    }, [])
+
     return (
-        <div className={styles.Container}>
+        <div className={`${styles.Container} ${drawerIsOpen && !MediaBelow ? styles.drawerOpen : styles.normal} ${MediaBelow && !isGrid ? styles.fullWidth : styles.nothing}`}>
             <h1 className={styles.header}>{movieFolder}</h1>
             <div className={styles.containerInput}>
                 <input onChange={filterDataFunction} placeholder='Search' type={'search'} className={styles.searchInput}></input>
@@ -75,14 +111,19 @@ function Movies() {
                 </label>
                 <div className={styles.disabledInput} id="file-input" />
             </div>
-            <div className={styles.MoviesContainer}>
-                {
-                    loading
-                        ? <img src={require('../../assets/loading.gif')} className={styles.imageLoading}></img>
-                        : filteredData.map((item, index) =>
-                            <MovieBanner key={index} item={item} />
-                        )
-                }
+            <div className={styles.MoviesPapa}>
+                <div className={styles.buttonBox}>
+                    <img onClick={() => setIsGrid((prev) => !prev)} src={isGrid ? gridImage : rowImage} className={styles.button} />
+                </div>
+                <div className={`${styles.MoviesContainer} ${isGrid ? styles.grid : styles.row}`}>
+                    {
+                        loading
+                            ? <img src={require('../../assets/loading.gif')} className={styles.imageLoading}></img>
+                            : filteredData.map((item, index) =>
+                                <MovieBanner key={index} isGrid={isGrid} item={item} />
+                            )
+                    }
+                </div>
             </div>
         </div>
 

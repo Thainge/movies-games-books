@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './PageNotFound.module.css';
 
-function PageNotFound() {
+function PageNotFound({ setDrawerOpen }) {
+
+    useEffect(() => {
+        setDrawerOpen(() => false);
+    }, [])
+
     return (
         <div className={styles.container}>
             <div className={styles.text}>

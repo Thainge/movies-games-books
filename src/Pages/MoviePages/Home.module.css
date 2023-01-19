@@ -1,16 +1,21 @@
+.Container {
+    transition: all .3s;
+}
+
 .MoviesContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10em, max-content));
+    grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
     column-gap: 2em;
     row-gap: 2em;
-    padding-top: 2em;
-    padding-right: 2em;
-    padding-left: 2em;
-    margin-right: 10em;
-    margin-left: 10em;
-    justify-content: center;
-    background-color: rgb(11, 12, 13);
-    padding-bottom: 2em;
+    padding: 2em;
+    justify-content: flex-start;
+    background-color: var(--baseBackground2);
+    min-height: 60vh;
+}
+
+.drawerOpen {
+    margin-left: 16.3em;
+    margin-right: .7em;
 }
 
 .containerInput {
@@ -84,6 +89,16 @@
     height: auto;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 999999;
+}
+
 .add {
     display: flex;
     flex-direction: column;
@@ -99,7 +114,7 @@
     background-color: rgb(0, 0, 0, .2);
     color: rgb(88, 88, 88);
     border-radius: .5em;
-    box-shadow: 0 0 .5em .2em black;
+    box-shadow: rgb(1, 1, 1) .5em .3em .5em, rgb(1, 1, 1) 0em .2em .5em;
 }
 
 .add:hover {
@@ -140,8 +155,10 @@
     .MoviesContainer {
         padding-right: 2em;
         padding-left: 2em;
-        margin-right: 5em;
-        margin-left: 5em;
+    }
+
+    .drawerOpen {
+        margin-left: 16em;
     }
 }
 
@@ -163,10 +180,6 @@
     .searchInput {
         width: 100%;
         border-radius: 0;
-    }
-
-    .MoviesContainer {
-        background-color: transparent;
     }
 
     .fileText {

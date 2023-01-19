@@ -1,6 +1,13 @@
 .headerContainer {
-    border-bottom: .1em solid rgb(232, 230, 227);
+    border-bottom: .1em solid rgb(0, 0, 0);
     padding-bottom: 2em;
+    transition: all .2s;
+    padding: 0;
+    box-shadow: 0 0 1em .4em rgba(0, 0, 0, 0.404);
+}
+
+.drawerOpen {
+    margin-left: 15em;
 }
 
 .h1El {
@@ -16,7 +23,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
+    width: 100%;
+    background-color: var(--headerBackground);
 }
 
 .liEl .link {
@@ -25,37 +33,28 @@
     text-align: center;
     padding: 1.4em 4em;
     text-decoration: none;
-    border-bottom: .1em solid black;
     letter-spacing: .2em;
-    background-color: rgb(11, 12, 13);
+    background-color: var(--linkBackground);
 }
 
-/* Change the link color to #111 (black) on hover */
-.liEl .link:hover {
-    background-color: rgb(30, 30, 30);
-    color: white;
-}
-
-.activeLi {
+.activeLink {
     display: block;
     color: rgb(232, 230, 227);
     text-align: center;
     padding: 1.4em 4em;
     text-decoration: none;
-    border-bottom: .1em solid black;
     letter-spacing: .2em;
-    font-weight: bold;
-    background-color: rgb(11, 12, 13);
+    background-color: var(--linkBackgroundActive);
 }
 
-.activeLi .link:hover {
-    background-color: rgb(30, 30, 30);
-    color: rgb(194, 5, 5);
+.activeLink:hover {
+    color: white;
 }
 
-.moviedb {
-    height: .75em;
-    width: auto;
+/* Change the link color to #111 (black) on hover */
+.liEl .link:hover {
+    background-color: var(--linkBackgroundHover);
+    color: white;
 }
 
 .center {
@@ -63,4 +62,44 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--baseBackground1);
+    padding-bottom: 2em;
+}
+
+.special {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--gradientText);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: .05em;
+    font-size: 1.2em;
+    margin-left: .3em;
+}
+
+.centerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 850px) {
+    .liEl .link {
+        font-size: 1.5vw;
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .activeLink {
+        font-size: 1.5vw;
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

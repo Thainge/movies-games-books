@@ -2,10 +2,10 @@ import { format } from 'date-fns';
 import React, { useState } from 'react';
 import { ContextFunction } from '../../../Contexts/ContextProvider';
 import localStorage from 'local-storage';
-import './form.css';
+import styles from './form.module.css';
 import fetchRequest from '../../../hooks/addNewMovies';
 
-function AddModal({ setAddModalState }) {
+function AddModalMovies({ setAddModalState }) {
     const obj = ContextFunction();
     const { allFolders, setAllFolders } = obj;
 
@@ -68,33 +68,35 @@ function AddModal({ setAddModalState }) {
     }
 
     return (
-        <form onSubmit={SubmitEverything} className={'flexCenter'}>
-            <div className='formContainer'>
-                <div className={'textContainer'}>
-                    <label htmlFor="text" className={'nameText'}>
+        <form className={styles.flexCenterMovie} onSubmit={SubmitEverything}>
+            <div className={styles.formContainer}>
+                <div className={styles.textContainer}>
+                    <label htmlFor="text" className={styles.nameText}>
                         Name:
                     </label>
-                    <input type="text" required onChange={(e) => setText(e.target.value)} placeholder={'Name'} className='nameInput' />
+                    <input type="text" required onChange={(e) => setText(e.target.value)} placeholder={'Name'} className={styles.nameInput} />
                 </div>
-                <div className="imageUploadContainer">
-                    <div className='textInfo'>Files must be put into the correct format containing exact movie name and year, for instance, "Iron Man (2008).mp4"</div>
-                    <div onClick={fileInput} title='Select Directory' className='fileText'>
-                        <img src={require('../../../assets/upload.png')} className={'imageUpload'}></img>
+                <div className={styles.imageUploadContainer}>
+                    <div className={styles.textInfo}>Files must be put into the correct format containing exact movie name and year, for instance, "Iron Man (2008).mp4"</div>
+                    <div onClick={fileInput} title='Select Directory' className={styles.fileText}>
+                        <img src={require('../../../assets/upload.png')} className={styles.imageUpload}></img>
                         {
-                            success.success ? <div className='success'>Selected {success.itemCount} items</div> : <div className='text'>Select Directory</div>
+                            success.success ? <div className={styles.success}>Selected {success.itemCount} items</div> : <div className={styles.text}>Select Directory</div>
                         }
                     </div>
                 </div>
             </div>
             {
-                loading ? <img src={require('../../../assets/loading.gif')} className={'imageLoading'}></img> : <></>
+                loading ? <div className={styles.loadingBox}>
+                    <img src={require('../../../assets/loading.gif')} className={styles.imageLoading}></img>
+                </div> : <></>
             }
-            <div className='buttonsContainer'>
-                <div className='delete' onClick={closeModal}>Cancel</div>
-                <input type={'submit'} className={`${loading ? 'disabled-edit' : 'edit'}`} value="Submit" />
+            <div className={styles.buttonsContainer}>
+                <div className={styles.delete} onClick={closeModal}>Cancel</div>
+                <input type={'submit'} className={`${loading ? styles.disabledEdit : styles.edit}`} value="Submit" />
             </div>
         </form>
     );
 }
 
-export default AddModal;
+export default AddModalMovies;

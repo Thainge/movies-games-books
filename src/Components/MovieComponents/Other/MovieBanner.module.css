@@ -3,6 +3,13 @@
     padding: 1em;
     border-radius: .5em;
     position: relative;
+    box-shadow: rgb(1, 1, 1) .5em .3em .5em, rgb(1, 1, 1) 0em .2em .5em;
+    transition: all .3s;
+    width: 15em;
+}
+
+.posterContainer:hover {
+    scale: 1.03;
 }
 
 .posterLink {
@@ -14,14 +21,82 @@
     position: relative;
 }
 
+.rowPosterContainer {
+    background-color: rgb(24, 24, 24);
+    position: relative;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rowPosterLink {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    margin-right: 1em;
+}
+
+.rowPoster {
+    width: auto;
+    height: 4.7em;
+    cursor: pointer;
+    transition: all .2s;
+    margin-right: .5em;
+}
+
+.rowPosterHeader {
+    color: rgb(232, 230, 227);
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 40%;
+}
+
+.rowPosterTime {
+    color: rgb(232, 230, 227);
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    cursor: pointer;
+    width: 15%;
+}
+
+.starContainer {
+    font-size: 1em;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    color: rgb(232, 230, 227);
+}
+
+.star {
+    height: 1em;
+    width: auto;
+    margin-right: .3em;
+}
+
+.extra {
+    margin-left: 1em;
+}
+
 .delete {
     position: absolute;
     top: 0;
     right: 0;
-    width: 1em;
-    padding: .7em;
-    border-bottom-left-radius: 1em;
-    background-color: rgb(255, 0, 0, .1);
+    width: .9em;
+    padding: .6em;
+    border-bottom-left-radius: .5em;
+    background-color: rgb(255, 0, 0, .2);
     transition: all .2s;
     z-index: 99909;
     cursor: pointer;
@@ -29,20 +104,16 @@
 
 .delete:hover {
     background-color: rgb(255, 0, 0, .5);
-    width: 1.1em;
-    padding: .8em;
+    width: 1em;
+    padding: .7em;
 }
 
 .poster {
-    width: 15em;
+    width: 11em;
     height: auto;
     border-radius: 1em;
     cursor: pointer;
     transition: all .2s;
-}
-
-.poster:hover {
-    scale: 1.02;
 }
 
 .loadingPoster {
@@ -62,10 +133,56 @@
     font-size: 1.3em;
     text-align: center;
     cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 11em;
+}
+
+@media screen and (max-width: 1080px) {
+    .rowPosterHeader {
+        font-size: 1.5vw;
+    }
+
+    .rowPosterTime {
+        font-size: 1.2vw;
+    }
+
+    .starContainer {
+        font-size: 1.2vw;
+    }
 }
 
 @media screen and (max-width: 778px) {
     .posterHeader {
         font-size: 1.1em;
+    }
+
+    .rowPosterLink {
+        margin-right: 1vw;
+    }
+
+    .rowPosterHeader {
+        font-size: 2vw;
+        width: 40%;
+    }
+
+    .rowPosterTime {
+        font-size: 1.5vw;
+        width: 20%;
+    }
+
+    .starContainer {
+        font-size: 1.5vw;
+        width: 20%;
+    }
+
+    .star {
+        height: 1vw;
+        margin-right: .3vw;
+    }
+
+    .extra {
+        margin-left: 1vw;
     }
 }
